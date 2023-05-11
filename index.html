@@ -6,10 +6,236 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./Resource/font/fontawesome-5.15.1/css/all.min.css">
+    <script src="homeController.js"></script>
 </head>
 
 <body>
-
+    <div class="container-fluid" id="container-fluid">
+        <div class="col-md-2 menu" id="menu">
+            <ul class="nav">
+                <li>
+                    <a href="index.html">
+                        <div class="home-img">
+                            <img class="home-img-menu" src="./Resource/img/toggle.png" alt="">
+                            <img class="home-img-logo" src="./Resource/img/cukcuk-logo.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li class="menu-item" id="nav-logo-menu">
+                    <a href="tongquan.html">
+                        <img src="./Resource/icon/dashboard.png" alt="">
+                        <span class="menu-title">Tổng quan</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="baocao.html">
+                        <img src="./Resource/icon/report.png" alt="">
+                        <span class="menu-title">Báo cáo</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="muahang.html">
+                        <img src="./Resource/icon/dashboard.png" alt="">
+                        <span class="menu-title">Mua hàng</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="danhmucnhanvien.html">
+                        <img src="./Resource/icon/dic-employee.png" alt="">
+                        <span class="menu-title">Danh mục nhân viên</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="thietlaphethong.html">
+                        <img src="./Resource/icon/setting.png" alt="">
+                        <span class="menu-title">Thiết lập hệ thống</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10" id="noidung">
+            <div class="noidung-top">
+                <div class="chonnhahang">
+                    <select id="chonnhahang-value">
+                        <option value=" option1">Nhà hàng biển đông</option>
+                        <option value="option2">Nhà hàng abc</option>
+                        <option value="option3">Nhà hàng xyz</option>
+                    </select>
+                </div>
+                <div class="infomation-user">
+                    <img class="default-avatar" src="./Resource/icon/avatar-default.png" alt="">
+                    <p>Nguyễn Văn Mạnh</p>
+                    <img class="default-avatar-option" src="./Resource/icon/option.png" alt="">
+                </div>
+            </div>
+            <div class="noidung-center">
+                <div class="tieude">
+                    <h5>Danh sách nhân viên</h5>
+                    <button onclick="openOverlay()">
+                        <img src="./Resource/icon/add.png" alt="">
+                        <span>Thêm nhân viên</span>
+                    </button>
+                </div>
+                <div class="chucnang">
+                    <div class="cacchucnang">
+                        <div class="searchnhanvien">
+                            <img src="./Resource/icon/search.png" alt="">
+                            <input type="search" placeholder="Tìm kiếm theo mã, tên hoặc số điện thoại"
+                                name="searchnhanvien" id="searchnhanvien">
+                        </div>
+                        <div class="phongban-vitri">
+                            <select id="chonphongban-value">
+                                <option value=" option1">Tất cả phòng ban</option>
+                                <option value="option2">Nhà hàng abc</option>
+                                <option value="option3">Nhà hàng xyz</option>
+                            </select>
+                        </div>
+                        <div class="phongban-vitri">
+                            <select id="chonvitri-value">
+                                <option value=" option1">Tất cả vị trí</option>
+                                <option value="option2">Nhà hàng abc</option>
+                                <option value="option3">Nhà hàng xyz</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="resetchucnang">
+                        <img src="./Resource/icon/refresh.png" alt="">
+                    </div>
+                </div>
+                <div class="danhsachnhanvien">
+                    <form action="" method="get">
+                        <table>
+                            <tr>
+                                <th>Mã nhân viên</th>
+                                <th>Họ và tên</th>
+                                <th>Giới tính</th>
+                                <th>Ngày sinh</th>
+                                <th>Điện thoại</th>
+                                <th>Email</th>
+                                <th>Chức vụ</th>
+                                <th>Phòng ban</th>
+                                <th>Mức lương cơ bản</th>
+                                <th>Tình trạng công việc</th>
+                            </tr>
+                            <tr>
+                                <td>NV-0000001</td>
+                                <td>Bùi Ngọc Tiến</td>
+                                <td>Nam</td>
+                                <td>17/05/2001</td>
+                                <td>0439429944</td>
+                                <td>tien@gmail.com</td>
+                                <td>Fresher</td>
+                                <td>Customize</td>
+                                <td>10.000.000</td>
+                                <td>Đang thử việc</td>
+                            </tr>
+                            <tr>
+                                <td>NV-0000001</td>
+                                <td>Bùi Ngọc Tiến</td>
+                                <td>Nam</td>
+                                <td>17/05/2001</td>
+                                <td>0439429944</td>
+                                <td>tien@gmail.com</td>
+                                <td>Fresher</td>
+                                <td>Customize</td>
+                                <td>10.000.000</td>
+                                <td>Đang thử việc</td>
+                            </tr>
+                            <tr>
+                                <td>NV-0000001</td>
+                                <td>Bùi Ngọc Tiến</td>
+                                <td>Nam</td>
+                                <td>17/05/2001</td>
+                                <td>0439429944</td>
+                                <td>tien@gmail.com</td>
+                                <td>Fresher</td>
+                                <td>Customize</td>
+                                <td>10.000.000</td>
+                                <td>Đang thử việc</td>
+                            </tr>
+                            <tr>
+                                <td>NV-0000001</td>
+                                <td>Bùi Ngọc Tiến</td>
+                                <td>Nam</td>
+                                <td>17/05/2001</td>
+                                <td>0439429944</td>
+                                <td>tien@gmail.com</td>
+                                <td>Fresher</td>
+                                <td>Customize</td>
+                                <td>10.000.000</td>
+                                <td>Đang thử việc</td>
+                            </tr>
+                            <tr>
+                                <td>NV-0000001</td>
+                                <td>Bùi Ngọc Tiến</td>
+                                <td>Nam</td>
+                                <td>17/05/2001</td>
+                                <td>0439429944</td>
+                                <td>tien@gmail.com</td>
+                                <td>Fresher</td>
+                                <td>Customize</td>
+                                <td>10.000.000</td>
+                                <td>Đang thử việc</td>
+                            </tr>
+                            <tr>
+                                <td>NV-0000001</td>
+                                <td>Bùi Ngọc Tiến</td>
+                                <td>Nam</td>
+                                <td>17/05/2001</td>
+                                <td>0439429944</td>
+                                <td>tien@gmail.com</td>
+                                <td>Fresher</td>
+                                <td>Customize</td>
+                                <td>10.000.000</td>
+                                <td>Đang thử việc</td>
+                            </tr>
+                            <tr>
+                                <td>NV-0000001</td>
+                                <td>Bùi Ngọc Tiến</td>
+                                <td>Nam</td>
+                                <td>17/05/2001</td>
+                                <td>0439429944</td>
+                                <td>tien@gmail.com</td>
+                                <td>Fresher</td>
+                                <td>Customize</td>
+                                <td>10.000.000</td>
+                                <td>Đang thử việc</td>
+                            </tr>
+                            <tr>
+                                <td>NV-0000001</td>
+                                <td>Bùi Ngọc Tiến</td>
+                                <td>Nam</td>
+                                <td>17/05/2001</td>
+                                <td>0439429944</td>
+                                <td>tien@gmail.com</td>
+                                <td>Fresher</td>
+                                <td>Customize</td>
+                                <td>10.000.000</td>
+                                <td>Đang thử việc</td>
+                            </tr>
+                            <tr>
+                                <td>NV-0000001</td>
+                                <td>Bùi Ngọc Tiến</td>
+                                <td>Nam</td>
+                                <td>17/05/2001</td>
+                                <td>0439429944</td>
+                                <td>tien@gmail.com</td>
+                                <td>Fresher</td>
+                                <td>Customize</td>
+                                <td>10.000.000</td>
+                                <td>Đang thử việc</td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
